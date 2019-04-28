@@ -15,10 +15,16 @@
  */
 // #define CNN_USE_TBB
 
+#ifdef __APPLE__
 /**
  * define to enable avx vectorization
  */
- #define CNN_USE_AVX
+#define CNN_USE_AVX
+/**
+ * define to enable Grand Central Dispatch parallelization
+ */
+#define CNN_USE_GCD
+#endif
 
 /**
  * define to enable sse2 vectorization
@@ -29,11 +35,6 @@
  * define to enable OMP parallelization
  */
 // #define CNN_USE_OMP
-
-/**
- * define to enable Grand Central Dispatch parallelization
- */
-// #define CNN_USE_GCD
 
 /**
  * define to use exceptions

@@ -51,6 +51,7 @@
 #include "recurrent_layer.h"
 #include "slice_layer.h"
 #include "zero_pad_layer.h"
+#include "files.h"
 
 #ifdef CNN_USE_GEMMLOWP
 #include "quantized_fully_connected_layer.h"
