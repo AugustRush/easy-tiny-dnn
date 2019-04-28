@@ -42,7 +42,7 @@ class deconvolutional_layer : public layer {
    * @param window_size  [in] window(kernel) size of convolution
    * @param in_channels  [in] input image channels (grayscale=1, rgb=3)
    * @param out_channels [in] output image channels
-   * @param padding      [in] rounding strategy
+   * @@param padding      [in] rounding strategy
    *                          valid: use valid pixels of input only.
    *output-size
    *= (in-width - window_size + 1) *
@@ -84,7 +84,7 @@ class deconvolutional_layer : public layer {
    * @param window_height [in] window_height(kernel) size of convolution
    * @param in_channels   [in] input image channels (grayscale=1, rgb=3)
    * @param out_channels  [in] output image channels
-   * @param padding       [in] rounding strategy
+   * @@param padding       [in] rounding strategy
    *                          valid: use valid pixels of input only.
    *output-size
    *= (in-width - window_width + 1) *
@@ -236,7 +236,7 @@ class deconvolutional_layer : public layer {
   /**
    * return delta of previous layer (delta=\frac{dE}{da}, a=wx in
    *fully-connected layer)
-   * @param worker_index id of current worker-task
+   * @@param worker_index id of current worker-task
    * @param in_data      input vectors (same vectors as forward_propagation)
    * @param out_data     output vectors (same vectors as forward_propagation)
    * @param out_grad     gradient of output vectors (i-th vector correspond

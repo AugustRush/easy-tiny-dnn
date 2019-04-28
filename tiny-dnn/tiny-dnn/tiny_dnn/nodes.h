@@ -86,13 +86,11 @@ class nodes {
   /**
    * propagate gradient
    * @param first        : gradient of cost function(dE/dy)
-   * @param worker_index : id of worker-task
    **/
   virtual void backward(const std::vector<tensor_t> &first) = 0;
 
   /**
    * @param first input  : data vectors
-   * @param worker_index : id of worker-task
    **/
   virtual std::vector<tensor_t> forward(
     const std::vector<tensor_t> &first) = 0;  // NOLINT

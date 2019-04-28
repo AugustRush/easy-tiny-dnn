@@ -42,7 +42,7 @@ class quantized_deconvolutional_layer : public layer {
    * @param window_size  [in] window(kernel) size of convolution
    * @param in_channels  [in] input image channels (grayscale=1, rgb=3)
    * @param out_channels [in] output image channels
-   * @param padding      [in] rounding strategy
+   * @param pad_type      [in] rounding strategy
    *                          valid: use valid pixels of input only.
    *output-size
    *= (in-width - window_size + 1) *
@@ -85,7 +85,7 @@ class quantized_deconvolutional_layer : public layer {
    * @param window_height [in] window_height(kernel) size of convolution
    * @param in_channels   [in] input image channels (grayscale=1, rgb=3)
    * @param out_channels  [in] output image channels
-   * @param padding       [in] rounding strategy
+   * @param pad_type       [in] rounding strategy
    *                          valid: use valid pixels of input only.
    *output-size
    *= (in-width - window_width + 1) *

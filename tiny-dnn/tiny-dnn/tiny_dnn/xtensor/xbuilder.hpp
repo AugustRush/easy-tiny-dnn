@@ -36,7 +36,7 @@ namespace xt {
 
 /**
  * Returns an \ref xexpression containing ones of the specified shape.
- * @tparam shape the shape of the returned expression.
+ * @@tparam shape the shape of the returned expression.
  */
 template <class T, class S>
 inline auto ones(S shape) noexcept {
@@ -61,7 +61,7 @@ inline auto ones(const I (&shape)[L]) noexcept {
 
 /**
  * Returns an \ref xexpression containing zeros of the specified shape.
- * @tparam shape the shape of the returned expression.
+ * @@tparam shape the shape of the returned expression.
  */
 template <class T, class S>
 inline auto zeros(S shape) noexcept {
@@ -384,7 +384,7 @@ inline auto xtuple(Types&&... args) {
 /**
  * @brief Concatenates xexpressions along \em axis.
  *
- * @param t \ref xtuple of xexpressions to concatenate
+ * @@param t \ref xtuple of xexpressions to concatenate
  * @param axis axis along which elements are concatenated
  * @returns xgenerator evaluating to concatenated elements
  *
@@ -436,7 +436,7 @@ inline T add_axis(T arr, std::size_t axis, std::size_t value) {
  *        Stacking always creates a new dimension along which elements are
  * stacked.
  *
- * @param t \ref xtuple of xexpressions to concatenate
+ * @@param t \ref xtuple of xexpressions to concatenate
  * @param axis axis along which elements are stacked
  * @returns xgenerator evaluating to stacked elements
  *

@@ -269,7 +269,7 @@ inline auto xbroadcast<CT, X>::operator[](size_type i) const
 /**
  * Returns a constant reference to the element at the specified position in the
  * expression.
- * @param first iterator starting the sequence of indices
+ * @@param first iterator starting the sequence of indices
  * @param last iterator ending the sequence of indices
  * The number of indices in the sequence should be equal to or greater
  * than the number of dimensions of the function.

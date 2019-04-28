@@ -140,7 +140,7 @@ void construct_graph(network<graph> &graph,
  *     net.train<mse>(opt, data, label, 10, 20);
  *
  *
- * @param NetType specify the network is "sequential" or "graph".
+ * @@param NetType specify the network is "sequential" or "graph".
  *                "sequential" means the network doesn't have any branch or
  *merge pass.
  *                if the network has branch/merge, "graph" can be used.
@@ -420,7 +420,7 @@ class network {
   }
 
   /**
-   * @deprecated use fit instead for regression task
+   * @@deprecated use fit instead for regression task
    **/
   template <typename Error, typename Optimizer>
   bool train(Optimizer &optimizer,
@@ -595,7 +595,7 @@ class network {
   size_t layer_size() const { return net_.size(); }
 
   /**
-   * @deprecated use layer_size() instread.
+   * @@deprecated use layer_size() instread.
    **/
   size_t depth() const { return layer_size(); }
 
@@ -772,7 +772,7 @@ class network {
 
   /**
    * load network weights from filepath, 30 times faster than stream reading
-   * @deprecated use load_weights instead.
+   * @@deprecated use load_weights instead.
    **/
   void fast_load(const char *filepath) {
     FILE *stream = fopen(filepath, "r");

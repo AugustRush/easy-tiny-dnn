@@ -34,7 +34,7 @@ using xindex = std::vector<std::size_t>;
  * should take a
  * xexpression argument.
  *
- * \tparam E The derived type.
+ * \\tparam E The derived type.
  *
  */
 template <class D>

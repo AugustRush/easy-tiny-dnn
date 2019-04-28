@@ -60,7 +60,7 @@ struct recurrent_layer_parameters {
 class recurrent_layer : public layer {
  public:
   /**
-   * @param cell [in] pointer to the wrapped cell
+   * @param cell_p [in] pointer to the wrapped cell
    * @param seq_len [in] length of the input sequences
    * @param params [in] recurrent layer optional [parameters] @ref
    *recurrent_layer_parameters "recurrent_layer_parameters"
@@ -232,7 +232,7 @@ class recurrent_layer : public layer {
     reshape_backward_buffers_(batch_size, in_data);
 
     // move input to buffer
-    for (int s = (seq_len_ - 1); s >= 0; s--) {
+    for (int s = (int)(seq_len_ - 1); s >= 0; s--) {
       const size_t start = batch_size * s;
       for (size_t i = 0; i < in_data.size(); i++) {
         if (in_type_[i] == vector_type::data ||
@@ -252,7 +252,7 @@ class recurrent_layer : public layer {
         tensor_t &grad_buffer = *output_grad_buffer_[o];
         auto *data            = &(*out_data[o])[start];
         auto *grad            = &(*out_grad[o])[start];
-        int end               = seq_len_ - 1;
+        int end               = (int)(seq_len_ - 1);
         if (out_type_[o] == vector_type::aux && s == end && reset_state_) {
           fill_tensor(buffer, 0.0);
           fill_tensor(grad_buffer, 0.0);

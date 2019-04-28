@@ -86,8 +86,8 @@ class max_pooling_layer : public layer {
    * @param in_width     [in] width of input image
    * @param in_height    [in] height of input image
    * @param in_channels  [in] the number of input image channels(depth)
-   * @param pooling_size [in] factor by which to downscale
-   * @param stride       [in] interval at which to apply the filters to the
+   * @param pooling_size_x pooling_size_y  [in] factor by which to downscale
+   * @param stride_x  stride_y      [in] interval at which to apply the filters to the
    *input
    * @param ceil_mode    [in] when True, will use `ceil` instead of `floor` to
    *compute the output shape

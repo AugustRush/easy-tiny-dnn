@@ -36,9 +36,8 @@ class lrn_layer : public layer {
       in_square_(in_shape_.area()) {}
 
   /**
-   * @param layer       [in] the previous layer connected to this
+   * @param prev       [in] the previous layer connected to this
    * @param local_size  [in] the number of channels(depths) to sum over
-   * @param in_channels [in] the number of channels of input data
    * @param alpha       [in] the scaling parameter (same to caffe's LRN)
    * @param beta        [in] the scaling parameter (same to caffe's LRN)
    **/

@@ -56,8 +56,8 @@ class layer : public node {
    * @brief Defaul layer constructor that instantiates a N-input, M-output
    *layer
    *
-   * @param in_type[N] type of input vector (data, weight, bias...)
-   * @param out_type[M] type of output vector
+   * @@param in_type[N] type of input vector (data, weight, bias...)
+   * @@param out_type[M] type of output vector
    *
    **/
   layer(const std::vector<vector_type> &in_type,
@@ -150,10 +150,10 @@ class layer : public node {
     });
   }
 
-  ///! @deprecated use in_data_size() instead
+  ///! @@deprecated use in_data_size() instead
   size_t in_size() const { return in_data_size(); }
 
-  ///! @deprecated use out_data_size() instead
+  ///! @@deprecated use out_data_size() instead
   size_t out_size() const { return out_data_size(); }
 
   std::vector<const vec_t *> weights() const {

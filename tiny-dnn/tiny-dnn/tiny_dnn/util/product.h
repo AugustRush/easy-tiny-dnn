@@ -442,13 +442,13 @@ CNN_MUST_INLINE void add(const typename T::value_type *src,
 // TODO(beru): documentation
 /**
  *
- * @tparam T
- * @tparam src_aligned
- * @tparam dst_aligned
- * @param src
- * @param c
- * @param size
- * @param dst
+ * @@tparam T
+ * @@tparam src_aligned
+ * @@tparam dst_aligned
+ * @@param src
+ * @@param c
+ * @@param size
+ * @@param dst
  */
 template <typename T, typename src_aligned, typename dst_aligned>
 CNN_MUST_INLINE void muladd(const typename T::value_type *src,

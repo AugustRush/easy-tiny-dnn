@@ -470,7 +470,7 @@ namespace cereal
           version number and serialize that.
 
           @tparam T The type of the class being serialized
-          @param version The version number associated with it */
+          param version The version number associated with it */
       template <class T> inline
       std::uint32_t registerClassVersion()
       {
@@ -844,7 +844,7 @@ namespace cereal
           version number and serialize that.
 
           @tparam T The type of the class being serialized
-          @param version The version number associated with it */
+          @@param version The version number associated with it */
       template <class T> inline
       std::uint32_t loadClassVersion()
       {
