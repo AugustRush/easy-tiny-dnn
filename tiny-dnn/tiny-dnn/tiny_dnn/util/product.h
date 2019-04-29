@@ -20,6 +20,9 @@
 #endif
 
 #include "macro.h"
+#ifdef CNN_USE_APPLE_ACCELERATE
+#include "apple_math.h"
+#endif
 
 namespace vectorize {
 namespace detail {
@@ -782,7 +785,11 @@ CNN_MUST_INLINE void fill(T *dst, std::size_t size, T value) {
 #endif
 
 #else  // #if defined(_MSC_VER)
+#ifdef CNN_USE_APPLE_ACCELERATE
+  apple_fill(dst, value, 1, (int)size);
+#else
   detail::fill(dst, size, value);
+#endif
 #endif
 }
 

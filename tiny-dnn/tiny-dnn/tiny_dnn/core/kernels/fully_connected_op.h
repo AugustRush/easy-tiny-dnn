@@ -14,6 +14,9 @@
 #include "fully_connected_op_intel_mkl.h"
 #include "fully_connected_op_internal.h"
 #include "fully_connected_op_nnpack.h"
+#ifdef CNN_USE_APPLE_ACCELERATE
+#include "fully_connected_op_apple.h"
+#endif
 
 namespace tiny_dnn {
 
@@ -47,9 +50,14 @@ class FullyConnectedOp : public core::OpKernel {
         in_data, W[0], params.has_bias_ ? (*bias)[0] : vec_t(), out_data,
         params, context.parallelize());
     } else if (engine == core::backend_t::avx) {
+#ifdef CNN_USE_APPLE_ACCELERATE
+      kernels::fully_connected_op_apple(in_data, W[0], params.has_bias_ ? (*bias)[0] : vec_t(), out_data,
+                                             params, context.parallelize());
+#else
       kernels::fully_connected_op_avx(in_data, W[0],
                                       params.has_bias_ ? (*bias)[0] : vec_t(),
                                       out_data, params, context.parallelize());
+#endif
     } else if (engine == core::backend_t::cblas) {
       kernels::fully_connected_op_cblas(
         in_data, W[0], params.has_bias_ ? (*bias)[0] : vec_t(), out_data,

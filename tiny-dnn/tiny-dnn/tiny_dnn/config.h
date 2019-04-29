@@ -24,6 +24,11 @@
  * define to enable Grand Central Dispatch parallelization
  */
 #define CNN_USE_GCD
+
+/**
+ * define to use apple accelerate framework
+ */
+#define CNN_USE_APPLE_ACCELERATE
 #endif
 
 /**

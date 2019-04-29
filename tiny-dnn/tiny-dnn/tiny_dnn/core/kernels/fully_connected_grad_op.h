@@ -11,6 +11,7 @@
 
 #include "fully_connected_op_avx.h"
 #include "fully_connected_op_internal.h"
+#include "fully_connected_op_apple.h"
 
 namespace tiny_dnn {
 
@@ -43,9 +44,14 @@ class FullyConnectedGradOp : public core::OpKernel {
         prev_out, W[0], dW, params.has_bias_ ? *db : dummy, curr_delta,
         prev_delta, params, context.parallelize());
     } else if (engine == core::backend_t::avx) {
+#ifdef CNN_USE_APPLE_ACCELERATE
+      kernels::fully_connected_op_apple(prev_out, W[0], dW, params.has_bias_ ? *db : dummy, curr_delta,
+                                        prev_delta, params, context.parallelize());
+#else
       kernels::fully_connected_op_avx(
         prev_out, W[0], dW, params.has_bias_ ? *db : dummy, curr_delta,
         prev_delta, params, context.parallelize());
+#endif
     } else {
       throw nn_error("Not supported engine: " + to_string(engine));
     }
